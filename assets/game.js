@@ -12,16 +12,6 @@ cc.Class({
             console.log(data);
             console.log('entry')
         };
-    
-        var onNewUser = function (data) {
-            console.log(data);
-            console.log('onNewUser')
-        };
-    
-        var onMembers = function (data) {
-            console.log(data);
-            console.log('onMembers')
-        };
 
         pomelo.init({host: '172.16.0.142', 
             port: 3250,  
@@ -32,11 +22,17 @@ cc.Class({
             reconnectDelay: 3000,
             maxReconnectAttempts: 3
         }, function () {
-            console.log("initialized");
 
-            pomelo.on("onNewUser", onNewUser);
-            pomelo.on("onMembers", onMembers);
-            pomelo.request("connector.connector.entry", {name:'zr',uid:1000,headUrl:'baidu',sex:1,fangka:10,ip:'127.0.0.1'}, entry);
+            var UID = Math.random().toString().slice(-6);
+
+            pomelo.request("connector.connector.entry", {
+                name:'zr',
+                uid: UID,
+                headUrl:'baidu',
+                sex:1,
+                fangka:10,
+                ip:'127.0.0.1'
+            }, entry);
         });
 
         pomelo.on("disconnect", (data)=>{
@@ -60,58 +56,35 @@ cc.Class({
         });
     },
 
-    onMessage (data) {
-        console.log(data)
-    },
+    createMj () {
+        pomelo.request("mjgame.mjgame.createroom", {
+            version:"12234",
+            clubId:1,
+        }, (data)=>{
 
-    join () {
-        pomelo.request("lobby.lobby.join", {}, (data)=>{
-
-            console.log('join------')
-
-            if(data.code === 'PIT-000') {
-                pomelo.on('onMessage', this.onMessage);
-            }
+            console.log('mjgame.mjgame.createtable------')
+            console.log(data);
         });
     },
 
-    joinNN () {
-        pomelo.request("nngame.nngame.join", {}, (data)=>{
+    enterMjRoom () {
+        pomelo.request("mjgame.mjgame.enterroom", {
+            roomid:111111,
+        }, (data)=>{
 
-            console.log('join nngame------')
-
-            if(data.code === 'PIT-000') {
-                pomelo.on('onMessage', this.onMessage);
-            }
+            console.log('mjgame.mjgame.enterroom------')
+            console.log(data);
         });
     },
 
-    setsessiondata () {
-        pomelo.request("connector.setsessiondata", {'data':'aa'}, (data)=>{
-            console.log(data)
-            console.log('setsessiondata')
-        });
-    },
+    ready () {
+        pomelo.request("mjgame.mjgame.ready", {
+        }, (data)=>{
 
-    getsessiondata () {
-        pomelo.request("connector.getsessiondata", {}, (data)=>{
-            console.log(data)
-            console.log('getsessiondata')
+            console.log('mjgame.mjgame.ready------')
+            console.log(data);
         });
-    },
-
-    getroomsessiondata () {
-        pomelo.request("lobby.lobby.getsessiondata", {}, (data)=>{
-            console.log(data)
-            console.log('getroomsessiondata')
-        });
-    },
-
-    message () {
-        pomelo.notify("lobby.lobby.message", {name: 'this.nickname', content: 'this.inputMessage'});
     }
-
-    
 
     // update (dt) {},
 });
