@@ -54,6 +54,16 @@ cc.Class({
         pomelo.on("error", (data)=>{
             console.log("error" + data)
         });
+
+        pomelo.on("actionprompt", (data)=> {
+            console.log("actionprompt")
+            console.log(data)
+        })
+
+        pomelo.on("actionresponse", (data)=> {
+            console.log("actionresponse")
+            console.log(data)
+        })
     },
 
     createMj () {
@@ -62,7 +72,7 @@ cc.Class({
             clubId:1,
         }, (data)=>{
 
-            console.log('mjgame.mjgame.createtable------')
+            console.log('mjgame.mjgame.createroom------')
             console.log(data);
         });
     },
