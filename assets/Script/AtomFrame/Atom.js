@@ -29,8 +29,8 @@ const Atom = {
         cc.Atom.msgMgr = new msgMgr();
 
         //文件管理
-        // var fileMgr = require("AtomFrame/fileMgr");
-        // cc.Atom.fileMgr = new fileMgr();
+        var fileMgr = require("AtomFrame/fileMgr");
+        cc.Atom.fileMgr = new fileMgr();
         
         //sprite管理 
         var spriteMgr = require("AtomFrame/spriteMgr");

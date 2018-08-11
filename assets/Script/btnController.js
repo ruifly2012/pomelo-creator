@@ -28,7 +28,7 @@ cc.Class({
 
     //按钮监听事件
     onBtnHttpGet:function () {
-        cc.Atom.gameNetMgr.httpGet("http://www.baidu.com"   , (_bool, _respone ,_status) => { 
+        cc.Atom.gameNetMgr.httpGet("http://localhost:8080/v1/user/login/wx"   , (_bool, _respone ,_status) => { 
             if(_bool == true){
                 cc.Atom.eventMgr.notify("_showMsg", _respone)
             }else{
@@ -37,7 +37,7 @@ cc.Class({
         });
     },
     onBtnHttpPost: function () {
-        cc.Atom.gameNetMgr.httpPost("http://www.baidu.com", (_bool, _respone, _status) => {
+        cc.Atom.gameNetMgr.httpPost("http://localhost:8080/v1/user/login/wx", (_bool, _respone, _status) => {
             if (_bool == true) {
                 cc.Atom.eventMgr.notify("_showMsg", _respone)
             } else {
