@@ -78,11 +78,11 @@ cc.Class({
     },
 
     enterMjRoom () {
-        pomelo.request("mjgame.mjgame.enterroom", {
+        pomelo.request("mjgame.mjgame.entryroom", {
             roomid:111111,
         }, (data)=>{
 
-            console.log('mjgame.mjgame.enterroom------')
+            console.log('mjgame.mjgame.entryroom------')
             console.log(data);
         });
     },
