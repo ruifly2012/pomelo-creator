@@ -43,8 +43,8 @@ cc.Class({
     httpGet: function (url , callback) {
         var xhr = new XMLHttpRequest();
         xhr.timeout = 5000 ;//单位 毫秒
-        // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        // xhr.setRequestHeader("charset" , "UTF-8");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("charset" , "UTF-8");
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)) {
                 var response = xhr.responseText;
@@ -65,8 +65,8 @@ cc.Class({
     httpPost: function (url , callback) {
         var xhr = new XMLHttpRequest();
         xhr.timeout = 5000;//单位 毫秒
-        // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        // xhr.setRequestHeader("charset", "UTF-8");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("charset", "UTF-8");
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)) {
                 var response = xhr.responseText;
@@ -87,8 +87,8 @@ cc.Class({
     httpPut: function (url , data) {
         var xhr = new XMLHttpRequest();
         xhr.timeout = 5000;//单位 毫秒
-        // xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        // xhr.setRequestHeader("charset", "UTF-8");
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("charset", "UTF-8");
         xhr.onreadystatechange = function () {
             if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)) {
                 var response = xhr.responseText;

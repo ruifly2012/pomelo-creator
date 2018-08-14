@@ -21,14 +21,16 @@ cc.Class({
             console.log("########### _onHW2 ", this.desc, data);
         }, this);
 
+
+
         //加载预设资源
-        cc.Atom.prefabMgr.loadAllPrefab([{ key: "spNode", path:"common/prefabs/spNode"}], (index)=>{ console.log(index, "loadfinish" ) });
+        cc.Atom.prefabMgr.loadAllPrefab([{ key: "spNode", path:"prefabs/spNode"}], (index)=>{ console.log(index, "loadfinish" ) });
     },
 
 
     //按钮监听事件
     onBtnHttpGet:function () {
-        cc.Atom.gameNetMgr.httpGet("http://localhost:8080/v1/user/login/wx"   , (_bool, _respone ,_status) => { 
+        cc.Atom.gameNetMgr.httpGet("http://www.baidu.com"   , (_bool, _respone ,_status) => { 
             if(_bool == true){
                 cc.Atom.eventMgr.notify("_showMsg", _respone)
             }else{
@@ -37,7 +39,7 @@ cc.Class({
         });
     },
     onBtnHttpPost: function () {
-        cc.Atom.gameNetMgr.httpPost("http://localhost:8080/v1/user/login/wx", (_bool, _respone, _status) => {
+        cc.Atom.gameNetMgr.httpPost("http://www.baidu.com", (_bool, _respone, _status) => {
             if (_bool == true) {
                 cc.Atom.eventMgr.notify("_showMsg", _respone)
             } else {

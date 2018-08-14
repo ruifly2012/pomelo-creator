@@ -29,8 +29,8 @@ const Atom = {
         cc.Atom.msgMgr = new msgMgr();
 
         //文件管理
-        var fileMgr = require("AtomFrame/fileMgr");
-        cc.Atom.fileMgr = new fileMgr();
+        // var fileMgr = require("AtomFrame/fileMgr");
+        // cc.Atom.fileMgr = new fileMgr();
         
         //sprite管理 
         var spriteMgr = require("AtomFrame/spriteMgr");
@@ -69,8 +69,8 @@ const Atom = {
         cc.Atom.gameDataMgr = new gameDataMgr();
 
         //平台接口管理 platform
-        var platformMgr = require("AtomFrame/platformMgr");
-        cc.Atom.platformMgr = new platformMgr();
+        // var platformMgr = require("AtomFrame/platformMgr");
+        // cc.Atom.platformMgr = new platformMgr();
 
         //网络管理 net
         var gameNetMgr = require("AtomFrame/gameNetMgr");

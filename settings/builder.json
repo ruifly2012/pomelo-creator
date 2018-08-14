@@ -25,14 +25,14 @@
     "REMOTE_SERVER_ROOT": "",
     "orientation": "portrait"
   },
-  "startScene": "8cee5ac1-6992-4ea6-bba5-bb148e07a860",
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
   "title": "NewProject",
   "webOrientation": "auto",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "",
     "appid": "wx6ac3f5090a6b99c5",
     "isSubdomain": false,
-    "orientation": "portrait",
+    "orientation": "landscape",
     "subContext": ""
   },
   "xxteaKey": "bd97edca-3e76-42",
