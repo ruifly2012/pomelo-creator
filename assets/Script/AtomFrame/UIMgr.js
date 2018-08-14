@@ -42,7 +42,7 @@ cc.Class({
             if (callBack) {
                 callBack(temp);
             }
-        });
+        }.bind(this));
     },
 
     closeUI: function (targetUI) {
