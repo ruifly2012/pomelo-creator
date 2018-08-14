@@ -75,15 +75,15 @@ cc.Class({
                         //                2 、 声明 var 、 const 的区别 ： 例如一开始 var _resValue 这么定义后在callback 中 _resValue 固定是第一个赋值内容，之后的赋值都没有效果  而 element._value 是每次都能重新拿到新的值的 。
                         if (obj instanceof cc.SpriteAtlas) {
                             console.log("--SpriteAtlas :", _resValue);
-                            cc.Atom.spriteMgr.addSpriteAtlas(_index , obj)
+                            window.spriteMgr.addSpriteAtlas(_index , obj)
                         
                         } else if (obj instanceof cc.AnimationClip) {
                             console.log("--AnimationClip :", _resValue);
-                            cc.Atom.animateMgr.addAniClip(_index, obj);
+                            window.animateMgr.addAniClip(_index, obj);
                             //实际使用上 动画挂载在 prefab 上更加好处理
                         } else if (obj instanceof cc.Prefab) {
                             console.log("--Prefab :", _resValue);
-                            cc.Atom.prefabMgr.addPrefabObj(_index, obj);
+                            window.prefabMgr.addPrefabObj(_index, obj);
                         
                         } else if (obj instanceof cc.Texture2D) {
                             console.log("--Texture2D :", _resValue);
@@ -91,7 +91,7 @@ cc.Class({
                         
                         } else if (obj instanceof cc.SpriteFrame) {
                             console.log("--SpriteFrame :", _resValue);
-                            cc.Atom.spriteMgr.addSpriteFrame(_index , obj)
+                            window.spriteMgr.addSpriteFrame(_index , obj)
                         
                         } else if (obj instanceof cc.AudioClip) {
                             console.log("--AudioClip :", _resValue);
@@ -161,9 +161,9 @@ cc.Class({
                     } else if (_type == "texture") {
 
                     } else if (_type == "plist") {
-                        cc.Atom.spriteMgr.cleanSpriteAtlas(_index)
+                        window.spriteMgr.cleanSpriteAtlas(_index)
                     } else if (_type == "sprite") {
-                        cc.Atom.spriteMgr.cleanSpriteFrame(_index)
+                        window.spriteMgr.cleanSpriteFrame(_index)
                     } else if (_type == "prefab") {
 
                     } else if (_type == "particle") {

@@ -24,7 +24,7 @@ cc.Class({
 
     //生成砖块数据
     makeBrick(){
-        var brickNum = cc.Atom.gameConfMgr.getInfo("brickNum");
+        var brickNum = window.gameConfMgr.getInfo("brickNum");
         var bricList = [];
         for (var i = 0; i < brickNum; i++) {
             var item = {};
@@ -46,7 +46,7 @@ cc.Class({
         var brickNodeList = [];
         for (var i = 0; i < bricList_data.length; i++) {
             var item = bricList_data[i];
-            var node = cc.Atom.prefabMgr.getPrefabObj("brick"); //创建一个砖块 prefab节点
+            var node = window.prefabMgr.getPrefabObj("brick"); //创建一个砖块 prefab节点
             //预设对象才处理
             console.log(">>> prefab obj type :" + typeof(node))
             if(node != null){

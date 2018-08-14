@@ -14,10 +14,10 @@ cc.Class({
         const atom = require("AtomFrame/Atom");
         atom.createAtom();
 
-        this.gameUpdateInterval = cc.Atom.gameConfMgr.getInfo("gameUpdateInterval");
-        this.gameSpeed = cc.Atom.gameConfMgr.getInfo("gameSpeed"); //节奏提速
-        this.maxSteps = cc.Atom.gameConfMgr.getInfo("maxSteps");   //最大层数
-        this.indexOffset = cc.Atom.gameConfMgr.getInfo("indexOffset");//阶的偏移index
+        this.gameUpdateInterval = window.gameConfMgr.getInfo("gameUpdateInterval");
+        this.gameSpeed = window.gameConfMgr.getInfo("gameSpeed"); //节奏提速
+        this.maxSteps = window.gameConfMgr.getInfo("maxSteps");   //最大层数
+        this.indexOffset = window.gameConfMgr.getInfo("indexOffset");//阶的偏移index
     },
 
     start () {    
@@ -27,7 +27,7 @@ cc.Class({
 
     loadRes(){
         console.log(">>>> loadres ")
-        cc.Atom.resMgr.loadResByKey("JJGameRes" , (index , total , err)=>{
+        window.resMgr.loadResByKey("JJGameRes" , (index , total , err)=>{
             if(err != null || index == -1){
                 console.log("=== 加载资源出现异常： ",err);
                 return
@@ -35,7 +35,7 @@ cc.Class({
             console.log(" 资源加载进度 ： " ,index , total);
             if(index == total){
                 console.log("=== 加载完成")
-                cc.Atom.prefabMgr.loadAllPrefab([{ key: "brick", path:"JJGameRes/prefabs/item"} ,
+                window.prefabMgr.loadAllPrefab([{ key: "brick", path:"JJGameRes/prefabs/item"} ,
                                                  { key: "player_obj", path:"JJGameRes/prefabs/player_obj"}], 
                                                  (index)=>{ 
                                                     console.log(index, "prefabs loadfinish" ) 

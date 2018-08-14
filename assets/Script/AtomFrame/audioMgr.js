@@ -37,7 +37,7 @@ cc.Class({
             cc.audioEngine.stop(this.bgmAudioID)
             console.log(" audio : stopMusic")
         }
-        var musicVolume = cc.Atom.gameConfMgr.getInfo("musicVolume")
+        var musicVolume = window.gameConfMgr.getInfo("musicVolume")
         var _path = this.getUrl(audioName)
         console.log(" audio : ", _path , musicVolume)
         this.bgmAudioID = cc.audioEngine.play(_path, true ,musicVolume)
@@ -47,7 +47,7 @@ cc.Class({
     },
     //音效的播放
     playEffect: function (audioName , callback) {
-        var effectVolume = cc.Atom.gameConfMgr.getInfo("effectVolume")
+        var effectVolume = window.gameConfMgr.getInfo("effectVolume")
         var _path = this.getUrl(audioName)
         console.log(" audio : ", _path, effectVolume)
         var effectid = cc.audioEngine.play(_path , false ,effectVolume)        
@@ -58,12 +58,12 @@ cc.Class({
 
     setMusicVolume: function (volume) {
         console.log(" music volume :", volume)
-        var musicVolume = cc.Atom.gameConfMgr.getInfo("musicVolume")
+        var musicVolume = window.gameConfMgr.getInfo("musicVolume")
         if(musicVolume == volume){
             return ;
         }
 
-        cc.Atom.gameConfMgr.setInfo("musicVolume", volume)
+        window.gameConfMgr.setInfo("musicVolume", volume)
         // if(this.bgmAudioID > 0){
         //     cc.audioEngine.pause(this.bgmAudioID)
         // }
@@ -74,7 +74,7 @@ cc.Class({
 
     setEffectVolume: function (volume) {
         console.log(" effect volume :",volume)
-        cc.Atom.gameConfMgr.setInfo("effectVolume", volume)
+        window.gameConfMgr.setInfo("effectVolume", volume)
     },
 
     //操作某一个音频的 看API
