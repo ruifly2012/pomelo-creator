@@ -24,7 +24,7 @@ cc.Class({
 
 
         //加载预设资源
-        cc.Atom.prefabMgr.loadAllPrefab([{ key: "spNode", path:"prefabs/spNode"}], (index)=>{ console.log(index, "loadfinish" ) });
+        //cc.Atom.prefabMgr.loadAllPrefab([{ key: "spNode", path:"prefabs/spNode"}], (index)=>{ console.log(index, "loadfinish" ) });
     },
 
 
