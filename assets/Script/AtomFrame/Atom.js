@@ -7,10 +7,6 @@ const Atom = {
         var timerMgr = require("AtomFrame/timerMgr");
         window.timerMgr = new timerMgr();
 
-        // md5
-        var md5 = require("AtomFrame/md5");
-        window.md5 = new md5();
-
         //状态机 gamestate
         var gameState = require("AtomFrame/gameState");
         window.gameState = new gameState();
