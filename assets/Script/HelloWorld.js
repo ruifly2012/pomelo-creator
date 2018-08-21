@@ -21,7 +21,6 @@ cc.Class({
 
         const atom = require("AtomFrame/Atom");
         atom.createAtom();
-        clientEvent.init();
 
         //演示全局数据 gameConfMgr 配置的是游戏基础配置。 要添加存储、修改游戏业务运行是的数据用gameDataMgr
         window.gameConfMgr.TAG = "66666";
