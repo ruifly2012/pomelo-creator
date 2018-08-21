@@ -19,12 +19,10 @@ cc.Class({
         
         if (radian != -100 && radian != undefined) {
 
-            console.log("radian = " + radian);
-
-            if (radian <= Math.PI && radian >= 0)
-                this.node.scaleX = -1;
-            else 
+            if (radian <= Math.PI / 2 && radian >= -Math.PI / 2 )
                 this.node.scaleX = 1;
+            else 
+                this.node.scaleX = -1;
 
             this.node.x += Math.cos(radian) * this.speed * dt;
             //this.node.y += Math.sin(radian) * this.speed * dt;
